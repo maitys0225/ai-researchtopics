@@ -946,14 +946,15 @@ mindmapDiagram {
 ***** Real-time dashboards <<realtime>>
 ***** Cost-effective analytics <<lowcost>>
 
-*** <&chart> SingleStore <<analytics>>
+*** <&chart> SingleStore (formerly MemSQL) <<analytics>>
 **** <&plus> Strengths <<strengths>>
-***** Hybrid storage architecture <<inmemory>>
-***** Massively parallel processing <<parallel>>
-***** Sub-millisecond latencies <<realtime>>
+***** Hybrid Row/Columnar storage <<inmemory>> <<columnar>>
+***** Massively parallel processing (MPP) <<parallel>>
+***** Low latency for transactional & analytical queries <<realtime>> <<oltp>> <<olap>>
 **** <&star> Best for <<bestfor>>
-***** Hybrid OLTP/OLAP <<oltp>>
-***** Real-time insights <<realtime>>
+***** Hybrid Transactional/Analytical Processing (HTAP) <<oltp>> <<olap>>
+***** Real-time operational insights <<realtime>>
+***** Applications needing fast ingest and query
 
 ** <&ban> Limited Scalability <<limitedcat>>
 *** <&ban> DuckDB <<notrecommended>>
@@ -1018,6 +1019,7 @@ left side
 ***** Azure SQL Hyperscale
 ***** Databricks SQL Warehouse
 ***** Google BigQuery <<serverless>>
+***** Kusto Cluster
 
 ** <&transfer> DB2 Migration Recommendations <<migration>>
 *** Primary Candidates <<strongrecommend>>
