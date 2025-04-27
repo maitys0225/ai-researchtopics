@@ -1,0 +1,205 @@
+@startmindmap
+<style>
+mindmapDiagram {
+  node {
+    FontColor black
+    FontName Arial
+    FontSize 14
+    BorderThickness 1.5
+    BackgroundColor white
+    RoundCorner 10
+    shadowing 0.7
+  }
+
+  .cloudnative {
+    BackgroundColor #42A5F5-#1E88E5
+    FontColor white
+    BorderColor #1565C0
+    BorderThickness 2
+  }
+
+  .timeseriescat {
+    BackgroundColor #BA68C8-#9C27B0
+    FontColor white
+    BorderColor #6A1B9A
+    BorderThickness 2
+  }
+
+  .analyticscat {
+    BackgroundColor #FFD54F-#FFC107
+    FontColor black
+    BorderColor #FFA000
+    BorderThickness 2
+  }
+
+  .limitedcat {
+    BackgroundColor #EF9A9A-#E57373
+    FontColor white
+    BorderColor #D32F2F
+    BorderThickness 2
+  }
+
+  .strongrecommend {
+    BackgroundColor #66BB6A-#388E3C
+    FontColor white
+    BorderColor #2E7D32
+    BorderThickness 3
+    FontStyle bold
+  }
+
+  .recommended {
+    BackgroundColor #81C784-#66BB6A
+    FontColor black
+    BorderColor #388E3C
+    BorderThickness 2
+  }
+
+  .notrecommended {
+    BackgroundColor #EF5350-#E53935
+    FontColor white
+    BorderColor #B71C1C
+  }
+
+  .strengths {
+    BackgroundColor #C5E1A5-#AED581
+    FontColor #33691E
+    BorderColor #689F38
+  }
+
+  .limitations {
+    BackgroundColor #FFAB91-#FF8A65
+    FontColor #BF360C
+    BorderColor #E64A19
+  }
+
+  .bestfor {
+    BackgroundColor #4FC3F7-#29B6F6
+    FontColor #01579B
+    BorderColor #0288D1
+  }
+
+  .section {
+    BackgroundColor #9FA8DA-#7986CB
+    FontColor white
+    BorderColor #3949AB
+    FontStyle bold
+    BorderThickness 2
+  }
+
+  .latency {
+    BackgroundColor #A5D6A7-#81C784
+    FontColor #1B5E20
+    BorderColor #388E3C
+  }
+
+  .scalability {
+    BackgroundColor #B39DDB-#9575CD
+    FontColor white
+    BorderColor #673AB7
+  }
+
+  .models {
+    BackgroundColor #81D4FA-#4FC3F7
+    FontColor #01579B
+    BorderColor #0288D1
+  }
+
+  .migration {
+    BackgroundColor #FFCC80-#FFB74D
+    FontColor #E65100
+    BorderColor #FB8C00
+  }
+
+  .considerations {
+    BackgroundColor #E0E0E0-#BDBDBD
+    FontColor #424242
+    BorderColor #757575
+  }
+
+  .lowcost {
+    BackgroundColor #AED581-#9CCC65
+    FontColor #33691E
+    BorderColor #689F38
+  }
+
+  .realtime {
+    BackgroundColor #4FC3F7-#29B6F6
+    FontColor white
+    BorderColor #0288D1
+  }
+
+  .columnar {
+    BackgroundColor #CE93D8-#AB47BC
+    FontColor white
+    BorderColor #8E24AA
+  }
+
+  .distributed {
+    BackgroundColor #FFB74D-#FFA726
+    FontColor #BF360C
+    BorderColor #FB8C00
+  }
+
+  .inmemory {
+    BackgroundColor #80DEEA-#4DD0E1
+    FontColor #006064
+    BorderColor #00ACC1
+  }
+
+  .managed {
+    BackgroundColor #9FA8DA-#7986CB
+    FontColor white
+    BorderColor #3949AB
+  }
+
+  .serverless {
+    BackgroundColor #F48FB1-#F06292
+    FontColor white
+    BorderColor #D81B60
+  }
+}
+</style>
+
+* <b>Database Technologies for Ultra-High Data Volume (160B rows) and Low Latency (10-100ms)</b>
+** Cloud-Native Solutions <<cloudnative>>
+*** Azure SQL Hyperscale <<strongrecommend>>
+**** Strengths <<strengths>>
+***** Decoupled compute/storage <<distributed>>
+***** Fast backups <<managed>>
+***** Read scale-out <<distributed>>
+**** Best for <<bestfor>>
+***** OLTP/Analytics <<oltp>>
+
+*** Databricks SQL Warehouse <<recommended>>
+**** Strengths <<strengths>>
+***** Photon engine <<columnar>>
+**** Best for <<bestfor>>
+***** AI analytics <<olap>>
+
+** Time-Series Specialized <<timeseriescat>>
+*** kdb+ <<recommended>>
+**** Strengths <<strengths>>
+***** Low latency <<inmemory>>
+
+** Analytics-Optimized <<analyticscat>>
+*** ClickHouse <<recommended>>
+**** Strengths <<strengths>>
+***** Columnar storage <<columnar>>
+
+** Limited Scalability <<limitedcat>>
+*** DuckDB <<notrecommended>>
+
+left side
+** Performance Considerations <<section>>
+*** Query Latency Requirements <<latency>>
+*** Scalability Patterns <<scalability>>
+*** Data Models <<models>>
+*** Storage Type
+
+** DB2 Migration Recommendations <<migration>>
+*** Primary Candidates <<strongrecommend>>
+*** Secondary Options <<recommended>>
+*** Migration Considerations <<considerations>>
+*** Cost Efficiency <<lowcost>>
+
+@endmindmap

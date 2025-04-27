@@ -1,0 +1,458 @@
+@startmindmap
+<style>
+mindmapDiagram {
+  node {
+    FontColor black
+    FontName Arial
+    FontSize 14
+    BorderThickness 1.5
+    BackgroundColor white
+    RoundCorner 10
+    shadowing 0.5
+  }
+  
+  .cloud {
+    BackgroundColor #BBDEFB-#90CAF9
+    FontColor #0D47A1
+    BorderColor #1976D2
+  }
+  .azure {
+    BackgroundColor #0078D4-#0063B1
+    FontColor white
+    BorderColor #004E8C
+  }
+  .onprem {
+    BackgroundColor #FFCCBC-#FFAB91
+    FontColor #BF360C
+    BorderColor #E64A19
+  }
+  .hybrid {
+    BackgroundColor #C8E6C9-#A5D6A7
+    FontColor #1B5E20
+    BorderColor #388E3C
+  }
+  .timeseries {
+    BackgroundColor #E1BEE7-#CE93D8
+    FontColor #4A148C
+    BorderColor #8E24AA
+  }
+  .analytics {
+    BackgroundColor #FFF9C4-#FFF59D
+    FontColor #F57F17
+    BorderColor #FBC02D
+  }
+  .general {
+    BackgroundColor #E0E0E0-#BDBDBD
+    FontColor #212121
+    BorderColor #757575
+  }
+  .strengths {
+    BackgroundColor #DCEDC8-#C5E1A5
+    FontColor #33691E
+    BorderColor #689F38
+  }
+  .limitations {
+    BackgroundColor #FFCCBC-#FFAB91
+    FontColor #BF360C
+    BorderColor #E64A19
+  }
+  .bestfor {
+    BackgroundColor #B3E5FC-#81D4FA
+    FontColor #01579B
+    BorderColor #039BE5
+  }
+  .scalability {
+    BackgroundColor #D1C4E9-#B39DDB
+    FontColor #311B92
+    BorderColor #673AB7
+  }
+  .considerations {
+    BackgroundColor #F5F5F5-#E0E0E0
+    FontColor #424242
+    BorderColor #9E9E9E
+  }
+  .recommended {
+    BackgroundColor #A5D6A7-#81C784
+    FontColor #1B5E20
+    BorderColor #2E7D32
+    BorderThickness 2
+  }
+  .strongrecommend {
+    BackgroundColor #66BB6A-#4CAF50
+    FontColor white
+    BorderColor #2E7D32
+    BorderThickness 3
+    FontStyle bold
+  }
+  .notrecommended {
+    BackgroundColor #EF9A9A-#E57373
+    FontColor #B71C1C
+    BorderColor #D32F2F
+  }
+  .performance {
+    BackgroundColor #BBDEFB-#90CAF9
+    FontColor #0D47A1
+    BorderColor #1976D2
+  }
+  .latency {
+    BackgroundColor #C8E6C9-#A5D6A7
+    FontColor #1B5E20
+    BorderColor #388E3C
+  }
+  .migration {
+    BackgroundColor #FFE0B2-#FFCC80
+    FontColor #E65100
+    BorderColor #FB8C00
+  }
+  .models {
+    BackgroundColor #B3E5FC-#81D4FA
+    FontColor #01579B
+    BorderColor #039BE5
+  }
+  
+  ' New capability-based styles
+  .columnar {
+    BackgroundColor #D1C4E9-#B39DDB
+    FontColor #4A148C
+    BorderColor #673AB7
+    FontStyle italic
+  }
+  .distributed {
+    BackgroundColor #FFECB3-#FFE082
+    FontColor #FF6F00
+    BorderColor #FFA000
+    FontStyle italic
+  }
+  .inmemory {
+    BackgroundColor #B2EBF2-#80DEEA
+    FontColor #006064
+    BorderColor #00ACC1
+    FontStyle italic
+  }
+  .managed {
+    BackgroundColor #C5CAE9-#9FA8DA
+    FontColor #1A237E
+    BorderColor #3949AB
+    FontStyle italic
+  }
+  .serverless {
+    BackgroundColor #F8BBD0-#F48FB1
+    FontColor #880E4F
+    BorderColor #D81B60
+    FontStyle italic
+  }
+  .oltp {
+    BackgroundColor #FFCCBC-#FFAB91
+    FontColor #BF360C
+    BorderColor #E64A19
+    FontStyle italic
+  }
+  .olap {
+    BackgroundColor #FFF9C4-#FFF59D
+    FontColor #F57F17
+    BorderColor #FBC02D
+    FontStyle italic
+  }
+  .realtime {
+    BackgroundColor #B3E5FC-#81D4FA
+    FontColor #01579B
+    BorderColor #039BE5
+    FontStyle italic
+  }
+  .lowcost {
+    BackgroundColor #C8E6C9-#A5D6A7
+    FontColor #1B5E20
+    BorderColor #388E3C
+    FontStyle italic
+  }
+  .parallel {
+    BackgroundColor #E1BEE7-#CE93D8
+    FontColor #4A148C
+    BorderColor #8E24AA
+    FontStyle italic
+  }
+  
+  ' Left-side category styles
+  .cloudnative {
+    BackgroundColor #B3E5FC-#42A5F5
+    FontColor #01579B
+    BorderColor #1976D2
+    BorderThickness 2
+  }
+  .timeseriescat {
+    BackgroundColor #E1BEE7-#BA68C8
+    FontColor #4A148C
+    BorderColor #8E24AA
+    BorderThickness 2
+  }
+  .analyticscat {
+    BackgroundColor #FFF59D-#FFD54F
+    FontColor #F57F17
+    BorderColor #FFA000
+    BorderThickness 2
+  }
+  .limitedcat {
+    BackgroundColor #FFCDD2-#EF9A9A
+    FontColor #B71C1C
+    BorderColor #D32F2F
+    BorderThickness 2
+  }
+  .section {
+    BackgroundColor #E8EAF6-#C5CAE9
+    FontColor #1A237E
+    BorderColor #3F51B5
+    BorderThickness 2
+    FontStyle bold
+  }
+}
+</style>
+
+* <b>Database Technologies for\nUltra-High Data Volume (160B rows)\nand Low Latency (10-100ms)</b>
+** <&cloud> Cloud-Native Solutions <<cloudnative>>
+*** <&cloud> Azure SQL Hyperscale <<strongrecommend>>
+**** <&plus> Strengths <<strengths>>
+***** Decoupled compute and storage (up to 128 TB) <<distributed>>
+***** Fast snapshot-based backups <<managed>>
+***** Read scale-out capabilities <<distributed>>
+***** High transaction log throughput <<oltp>>
+**** <&minus> Limitations <<limitations>>
+***** Affected by poorly written queries
+***** SSD cache dependency
+***** Log rate governance
+**** <&star> Best for <<bestfor>>
+***** OLTP and analytical hybrid workloads <<oltp>>
+***** DB2 migration target <<strongrecommend>>
+***** Familiar SQL environment
+***** Enterprise features <<managed>>
+
+
+*** <&cloud> Databricks SQL Warehouse <<recommended>>
+**** <&plus> Strengths <<strengths>>
+***** Photon vectorized query engine <<parallel>>
+***** Record-setting TPC-DS performance <<olap>>
+***** Intelligent workload management <<managed>>
+**** <&minus> Limitations <<limitations>>
+***** UDF performance issues
+***** Metadata caching challenges
+**** <&star> Best for <<bestfor>>
+***** Data lakes
+***** AI-driven workloads
+***** Complex analytics <<olap>> 
+***** DB2 migration candidate <<recommended>>
+***** Open source alternative <<lowcost>>
+
+
+*** <&cloud> Kusto Cluster (Azure Data Explorer) <<recommended>>
+**** <&plus> Strengths <<strengths>>
+***** High-throughput data ingestion <<distributed>>
+***** Support for diverse data formats
+***** Hot caching & optimized indexing <<inmemory>>
+**** <&star> Best for <<bestfor>>
+***** Log analytics <<olap>>
+***** Time-series data <<realtime>>
+***** IoT telemetry <<realtime>>
+
+*** <&cloud> Azure Cosmos DB <<azure>>
+**** <&plus> Strengths <<strengths>>
+***** Global distribution <<distributed>>
+***** Multi-model support
+***** SLA-backed performance <<managed>>
+**** <&minus> Limitations <<limitations>>
+***** 10GB per logical partition
+***** Cost scales with throughput
+**** <&star> Best for <<bestfor>>
+***** Globally distributed applications <<distributed>>
+***** Schema-flexible workloads
+***** Multi-model data <<distributed>>
+
+*** <&cloud> Google BigQuery <<cloud>>
+**** <&plus> Strengths <<strengths>>
+***** Serverless architecture <<serverless>>
+***** Automatic resource provisioning <<managed>>
+***** Built-in ML capabilities
+**** <&star> Best for <<bestfor>>
+***** On-demand analytics <<olap>>
+***** Sporadic workload patterns <<serverless>>
+***** Cost-effective for large datasets <<lowcost>>
+**** <&minus> Limitations <<limitations>>
+***** Cold start latency
+***** Limited real-time capabilities
+***** Query cost management
+***** SQL dialect differences
+
+** <&clock> Time-Series Specialized <<timeseriescat>>
+*** <&clock> kdb+ <<recommended>>
+**** <&plus> Strengths <<strengths>>
+***** Sub-millisecond latency <<inmemory>>
+***** Superior benchmarks <<realtime>>
+***** Memory-mapped files <<inmemory>>
+***** "q" query language
+**** <&star> Best for <<bestfor>>
+***** Financial trading <<realtime>>
+***** High-frequency analytics <<olap>>
+***** Real-time data feeds <<realtime>>
+**** <&minus> Limitations <<limitations>>
+***** Proprietary license
+***** Steep learning curve
+***** Limited ecosystem
+
+*** <&clock> Azure PostgreSQL with TimescaleDB <<recommended>>
+**** <&plus> Strengths <<strengths>>
+***** Automatic partitioning (hypertables) <<distributed>>
+***** Columnar compression <<columnar>>
+***** Continuous aggregates <<olap>>
+**** <&star> Best for <<bestfor>>
+***** Time-series at scale <<realtime>>
+***** Familiar SQL environment
+***** DB2 migration candidate <<recommended>>
+***** Open source alternative <<lowcost>>
+*** <&clock> InfluxDB <<recommended>>
+**** <&plus> Strengths <<strengths>>
+***** High write throughput <<distributed>>
+***** Compression and downsampling <<columnar>>
+***** SQL-like query language
+
+
+
+** <&chart> Analytics-Optimized <<analyticscat>>
+*** <&chart> ClickHouse <<recommended>>
+**** <&plus> Strengths <<strengths>>
+***** Extreme query performance <<columnar>>
+***** Columnar storage with compression <<columnar>>
+***** Linear scalability <<distributed>>
+**** <&star> Best for <<bestfor>>
+***** Analytical workloads <<olap>>
+***** Real-time dashboards <<realtime>>
+***** Cost-effective analytics <<lowcost>>
+
+*** <&chart> SingleStore <<analytics>>
+**** <&plus> Strengths <<strengths>>
+***** Hybrid storage architecture <<inmemory>>
+***** Massively parallel processing <<parallel>>
+***** Sub-millisecond latencies <<realtime>>
+**** <&star> Best for <<bestfor>>
+***** Hybrid OLTP/OLAP <<oltp>>
+***** Real-time insights <<realtime>>
+
+** <&ban> Limited Scalability <<limitedcat>>
+*** <&ban> DuckDB <<notrecommended>>
+**** <&plus> Strengths <<strengths>>
+***** Local analytics
+***** Minimal configuration <<lowcost>>
+**** <&minus> Limitations <<limitations>>
+***** Single-node architecture
+***** Memory constraints
+***** Not suitable for 160B rows
+
+left side
+
+** <&cog> Performance Considerations <<section>>
+*** <&timer> Query Latency Requirements <<latency>>
+**** <&bolt> Sub-millisecond <<realtime>>
+***** kdb+ <<inmemory>>
+***** SingleStore <<inmemory>>
+**** <&bolt> 10-100ms <<realtime>>
+***** Azure SQL Hyperscale <<distributed>>
+***** Kusto Cluster <<distributed>>
+***** Cosmos DB <<distributed>>
+***** ClickHouse <<columnar>>
+**** <&clock> Seconds to minutes
+***** Databricks SQL Warehouse <<olap>>
+***** Google BigQuery <<serverless>>
+
+*** <&resize-both> Scalability Patterns <<scalability>>
+**** <&share> Horizontal Scaling <<distributed>>
+***** Azure SQL Hyperscale
+***** Databricks SQL Warehouse
+***** Kusto Cluster
+***** ClickHouse
+***** Cosmos DB
+**** <&layers> Vertical Scaling
+***** PostgreSQL with TimescaleDB
+***** DuckDB (limited)
+
+*** <&layers> Data Models <<models>>
+**** <&spreadsheet> Relational
+***** Azure SQL Hyperscale <<oltp>>
+***** Databricks SQL Warehouse <<olap>>
+***** PostgreSQL with TimescaleDB <<realtime>>
+***** SingleStore <<oltp>>
+**** <&sort-numeric> Columnar/Time-Series <<columnar>>
+***** kdb+ <<inmemory>>
+***** ClickHouse <<distributed>>
+***** Kusto Cluster <<distributed>>
+**** <&list> Multi-Model
+***** Cosmos DB <<distributed>>
+
+*** <&cog> Storage Type
+**** <&memory> In-Memory Optimized <<inmemory>>
+***** kdb+
+***** SingleStore
+***** Kusto Cluster (hot cache)
+**** <&hard-drive> Disk-Based
+***** Azure SQL Hyperscale
+***** Databricks SQL Warehouse
+***** PostgreSQL with TimescaleDB
+**** <&cloud-download> Decoupled Storage/Compute <<distributed>>
+***** Azure SQL Hyperscale
+***** Databricks SQL Warehouse
+***** Google BigQuery <<serverless>>
+
+** <&transfer> DB2 Migration Recommendations <<migration>>
+*** Primary Candidates <<strongrecommend>>
+**** <&check> Azure SQL Hyperscale
+***** Familiar SQL semantics
+***** Enterprise features <<managed>>
+***** Managed service <<managed>>
+**** <&check> PostgreSQL with TimescaleDB
+***** Open source alternative <<lowcost>>
+***** SQL compatibility
+***** Extensions ecosystem
+
+*** Secondary Options <<recommended>>
+**** <&thumb-up> Databricks SQL Warehouse
+***** For analytics-heavy workloads <<olap>>
+**** <&thumb-up> SingleStore
+***** For hybrid transaction/analytics <<oltp>>
+
+*** <&cog> Migration Considerations <<considerations>>
+**** Schema conversion
+**** Query optimization
+**** ETL pipelines
+**** Performance testing
+**** Cost analysis <<lowcost>>
+
+*** <&dollar> Cost Efficiency <<lowcost>>
+**** Low Total Cost of Ownership
+***** ClickHouse (open source)
+***** PostgreSQL with TimescaleDB
+**** Pay-As-You-Go
+***** Google BigQuery <<serverless>>
+***** Azure SQL Hyperscale (autoscale)
+**** High Throughput/Cost Ratio
+***** SingleStore
+***** Databricks SQL Warehouse
+
+legend right
+  <b>Color Legend</b>
+  |= <back:#FFFFFF> <color:black> Category </color> </back> |= <back:#FFFFFF> <color:black> Description </color> </back> |
+  | <back:#0078D4-#0063B1> <color:white> Azure Services </color> </back> | Microsoft Azure native services |
+  | <back:#B3E5FC-#42A5F5> <color:#01579B> Cloud-Native Solutions </color> </back> | Best scalable cloud options |
+  | <back:#E1BEE7-#BA68C8> <color:#4A148C> Time-Series Specialized </color> </back> | Optimized for time-series data |
+  | <back:#FFF59D-#FFD54F> <color:#F57F17> Analytics-Optimized </color> </back> | Analytics-focused platforms |
+  | <back:#FFCDD2-#EF9A9A> <color:#B71C1C> Limited Scalability </color> </back> | Not recommended for ultra-high volume |
+  | <back:#66BB6A-#4CAF50> <color:white> Recommended for DB2 Migration </color> </back> | Best DB2 alternatives |
+  
+  <b>Capability Legend</b>
+  |= <back:#FFFFFF> <color:black> Capability </color> </back> |= <back:#FFFFFF> <color:black> Description </color> </back> |
+  | <back:#D1C4E9-#B39DDB> <color:#4A148C> <i>Columnar Storage</i> </color> </back> | Column-oriented data organization |
+  | <back:#FFECB3-#FFE082> <color:#FF6F00> <i>Distributed Architecture</i> </color> </back> | Scales across multiple nodes |
+  | <back:#B2EBF2-#80DEEA> <color:#006064> <i>In-Memory Processing</i> </color> </back> | Optimized for RAM-based operations |
+  | <back:#C5CAE9-#9FA8DA> <color:#1A237E> <i>Managed Service</i> </color> </back> | Reduced operational overhead |
+  | <back:#F8BBD0-#F48FB1> <color:#880E4F> <i>Serverless</i> </color> </back> | On-demand resource allocation |
+  | <back:#FFCCBC-#FFAB91> <color:#BF360C> <i>OLTP Support</i> </color> </back> | Transaction processing capabilities |
+  | <back:#FFF9C4-#FFF59D> <color:#F57F17> <i>OLAP Support</i> </color> </back> | Analytical processing capabilities |
+  | <back:#B3E5FC-#81D4FA> <color:#01579B> <i>Real-time Processing</i> </color> </back> | Low-latency query responses |
+  | <back:#C8E6C9-#A5D6A7> <color:#1B5E20> <i>Cost Efficiency</i> </color> </back> | Lower TCO or flexible pricing |
+endlegend
+@endmindmap 
