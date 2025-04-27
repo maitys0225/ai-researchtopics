@@ -26,7 +26,8 @@ Handling a data volume of approximately 160 billion rows while maintaining a que
 
 ## **High Level Flow of the Analysis**
 
-```puml
+```plantuml
+@startuml
 @startmindmap
 <style>
 mindmapDiagram {
@@ -460,6 +461,7 @@ legend right
   | <back:#E1BEE7-#CE93D8> <color:#4A148C> <i>Parallel</i> </color> </back> | Parallel query execution |
 endlegend
 @endmindmap
+@enduml
 ```
 
 ## **Performance Benchmarking for Ultra-High Volume, Low Latency Workloads**
